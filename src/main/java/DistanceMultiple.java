@@ -29,11 +29,22 @@
 
 import java.util.Scanner;
 
-
 public class DistanceMultiple {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in).useDelimiter("[\\(|\\)|,|\\s]+");
+        System.out.print("How many times to run the program?:  ");
+        int n = scanner.nextInt();
 
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Input coordinate point: ");
+            double pointOneX = scanner.nextDouble();
+            double pointOneY = scanner.nextDouble();
+            double pointTwoX = scanner.nextDouble();
+            double pointTwoY = scanner.nextDouble();
+            double distance = Math.pow((Math.pow((pointTwoX - pointOneX), 2) +
+                    (Math.pow((pointTwoY - pointOneY), 2))), 0.5);
 
+            System.out.println(distance);
+        }
     }
-
 }
